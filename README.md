@@ -1,69 +1,80 @@
-# 🧮 Arbitrary Precision Calculator (APC) in C
+# 🧮 Arbitrary Precision Calculator (APC) 
 
 ## 📌 Overview
 
-This project implements an **Arbitrary Precision Calculator (APC)** in C.
+The **Arbitrary Precision Calculator (APC)** is a C-based application designed to perform arithmetic operations on **very large integers** that exceed the limits of built-in data types such as `int`, `long`, and `long long`.
 
-An APC is used to perform arithmetic operations on **very large numbers** that cannot be handled by standard data types like `int`, `long`, or `long long`.
-It achieves this by storing numbers as **linked lists** and performing operations digit by digit.
+To overcome these limitations, numbers are represented using **linked lists**, enabling precise computation regardless of input size.
 
-This project was developed as part of my learning program at **Emertxe** to gain hands-on experience with data structures and low-level memory handling in C.
+This project was developed as part of training at **Emertxe**, focusing on **data structures, memory management, and low-level programming in C**.
 
 ---
 
 ## ✨ Features
 
-The program supports the following operations:
-
-* Addition of large numbers
-* Subtraction of large numbers
-* Multiplication of large numbers
-* Division of large numbers (if implemented)
-* Handling both positive and negative numbers
-* Menu-driven interface for user interaction
+* ✅ Addition of large numbers
+* ✅ Subtraction with proper borrow handling
+* ✅ Multiplication using digit-by-digit logic
+* ✅ Division support *(if implemented)*
+* ✅ Handles both positive and negative numbers
+* ✅ Menu-driven CLI interface
+* ✅ Supports arbitrarily large inputs
 
 ---
 
 ## ⚙️ Working Principle
 
-* Numbers are stored as **linked lists**, where each node contains a single digit
+* Each number is stored as a **linked list**, where:
+
+  * Each node contains a **single digit**
 * Arithmetic operations are performed similar to **manual calculations**
-* Carry and borrow are handled explicitly
-* Result is stored and displayed as a linked list
+* Key implementations:
+
+  * **Carry propagation** for addition and multiplication
+  * **Borrow handling** for subtraction
+* Results are stored in a new linked list and displayed to the user
 
 ---
 
-## 🧠 Concepts Used
+## 🧠 Core Concepts Used
 
-* Linked Lists (Single / Double)
-* Dynamic Memory Allocation
-* Pointers and Structures in C
-* Arithmetic Algorithms (digit-by-digit operations)
-* String handling
+* Linked Lists (Singly / Doubly Linked List)
+* Dynamic Memory Allocation (`malloc`, `free`)
+* Pointers and Structures
+* Manual Arithmetic Algorithms
+* String to Linked List Conversion
 
 ---
 
 ## 🛠️ Technologies Used
 
-* **Programming Language:** C
+* **Language:** C
 * **Compiler:** GCC
 * **Platform:** Linux
 
 ---
 
-## 🎯 Learning Outcomes
+## 🎯 Key Learnings
 
-Through this project, I gained a deeper understanding of:
-
-* Handling very large numbers efficiently
-* Implementing arithmetic logic without built-in operators
-* Memory management using pointers
-* Designing modular and structured C programs
+* Implemented arithmetic operations beyond native data type limits
+* Strengthened understanding of **pointer manipulation and memory management**
+* Learned to handle **edge cases** (sign handling, leading zeros, large inputs)
+* Improved modular design and code reusability
 
 ---
 
-## ▶️ How to Run
+## ⚡ Time Complexity
 
+* Addition / Subtraction → **O(n)**
+* Multiplication → **O(n²)**
+* Division → Depends on implementation (typically **O(n²)**)
+
+---
+
+## 🚀 How to Run
+
+```bash id="runapc22"
 gcc *.c -o apc
 ./apc
 ```
+

@@ -1,0 +1,115 @@
+                      _____________________________________
+                       APC – Arbitrary Precision Calculator
+                     _______________________________________
+Overview:
+----------
+APC (Arbitrary Precision Calculator) is a C program that performs arithmetic operations on very large numbers using doubly linked lists instead of built-in data types. Each digit of a number is stored in a node, allowing calculations on numbers of unlimited size.
+
+Key Idea:
+--------
+One digit per node
+Head → most significant digit
+Tail → least significant digit
+
+Example:
+________
+Number: 123
+List:   1 ↔ 2 ↔ 3
+
+Operations Supported:
+____________________
+1)Addition (+)
+
+Example:
+_______
+123 + 45 = 168
+
+______
+Logic:
+______
+->Add digits from right to left
+->Handle carry
+->Store result in a new list
+
+
+2)Subtraction (−)
+
+Example:
+_________
+100 − 25 = 75
+25 − 100 = −75
+
+______
+Logic:
+______
+->Subtract smaller number from larger
+->Use borrow if needed
+->Remove leading zeros
+->Return sign separately
+
+
+3)Multiplication (×)
+
+Example:
+__________
+12 × 3 = 36
+123 × 45 = 5535
+
+______
+Logic:
+______
+->Multiply digit by digit
+->Generate partial products
+->Shift using zeros
+->Add partial results
+
+4)Division (/)
+
+Example:
+_________
+10 / 2 = 5
+
+______
+Logic:
+_______
+->Convert list to number
+->Perform division
+->Convert result back to list
+->Check for division by zero
+
+
+-------------
+Program Flow:
+-------------
+
+->Read input numbers and operator
+
+->Convert numbers to linked lists
+
+->Perform selected operation
+
+->Print the final result
+
+-----------
+Advantages:
+-----------
+*Handles very large numbers
+
+*Avoids overflow
+
+*Clear manual arithmetic logic
+
+*Good understanding of linked lists
+
+-----------
+Limitations:
+------------
+
+*Division is not fully arbitrary precision
+
+*Slower than built-in data types
+
+----------
+Conclusion:
+-----------
+The APC project demonstrates how arithmetic operations can be implemented using data structures instead of built-in data types. It improves understanding of linked lists, pointers, and low-level arithmetic operations in C.
